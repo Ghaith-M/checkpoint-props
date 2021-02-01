@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import FirstName from "./component/function";
+import Profession from "./component/Profession";
+import Bio from "./component/Bio";
+import myPhoto from "./pac.jpg";
+{
+  import Welcome from "./component/Welcome";
+}
 
 function App() {
+  const styleObject = { color: "red", textAlign: "center" };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={styleObject}>
+      <div>
+        <FirstName name="Ghaith Madhkour" />
+      </div>
+      <Profession Prof="student">
+        <img src={myPhoto} />
+      </Profession>
+      
+      <div>
+        <Welcome name="Ghaith" alertMyInput={alertMyInput} />
+      </div>
+
+      <Bio Mybio="creating web sites" />
     </div>
   );
 }
